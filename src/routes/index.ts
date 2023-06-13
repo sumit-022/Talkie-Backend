@@ -6,6 +6,10 @@ import { auth } from "../middlewares/auth.middleware"
 
 const router = Router()
 
+router.use("/test", (req, res) => {
+  res.status(200).json({ message: "Test route", data: null, error: null })
+})
+
 router.use("/data", dataRouter)
 router.use("/user", userRouter)
 router.use("/auth", auth, (req, res) => {
